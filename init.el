@@ -11,3 +11,6 @@
 			 ("org" . "http://orgmode.org/elpa/")
 			 ))
 (package-initialize)
+
+;; theme
+(load-theme 'zenburn t)
