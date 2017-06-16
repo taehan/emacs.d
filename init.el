@@ -15,6 +15,7 @@
 ;; Go mode
 (add-hook 'go-mode-hook
           (lambda ()
+            (setq gofmt-command "goimports")                ;goimports for gofmt
             (add-hook 'before-save-hook 'gofmt-before-save) ;gofmt everytime
             (auto-complete-mode 1)
             ))
