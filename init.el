@@ -15,8 +15,12 @@
 ;; Go mode
 (add-hook 'go-mode-hook
           (lambda ()
+            (setq compile-command "go build -v && go test -v && go vet")
+            (define-key (current-local-map) "\C-c\C-c" 'compile)
             (setq gofmt-command "goimports")                ;goimports for gofmt
             (add-hook 'before-save-hook 'gofmt-before-save) ;gofmt everytime
+            (local-set-key (kbd "C-c m") 'gofmt)
+            (local-set-key (kbd "M-.") 'godef-jump)
             (auto-complete-mode 1)
             ))
 
