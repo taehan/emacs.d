@@ -21,6 +21,8 @@
 ;; Go mode
 (add-hook 'go-mode-hook
           (lambda ()
+	    ;; eldoc for go
+	    (go-eldoc-setup)
 	    ;; compile
             (setq compile-command "go build -v && go test -v && go vet")
             (local-set-key (kbd "C-c C-c") 'compile)
@@ -49,7 +51,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (exec-path-from-shell flymake-go go-autocomplete auto-complete zenburn-theme go-mode))))
+    (go-eldoc exec-path-from-shell flymake-go go-autocomplete auto-complete zenburn-theme go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
