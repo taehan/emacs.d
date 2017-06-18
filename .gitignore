@@ -2,5 +2,9 @@
 *~
 *.elc
 auto-save-list/
-elpa/archives/
 ac-comphist.dat
+
+# elpa
+elpa/archives/
+elpa/magit-20170617.1011/AUTHORS.md
+elpa/magit-20170617.1011/COPYING
