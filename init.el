@@ -4,6 +4,12 @@
 (menu-bar-mode -1)                  ;disable menubar
 (tool-bar-mode -1)                  ;disable toolbar
 
+;; change windows focus with cursor keys
+(global-set-key (kbd "s-<up>") 'windmove-up)
+(global-set-key (kbd "s-<down>") 'windmove-down)
+(global-set-key (kbd "s-<left>") 'windmove-left)
+(global-set-key (kbd "s-<right>") 'windmove-right)
+
 ;; package
 (require 'package)
 (setq package-archives '(
