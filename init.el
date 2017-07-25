@@ -62,7 +62,10 @@
 
 ;; looking
 (load-theme 'zenburn t)
-(set-default-font "Monaco 13")
+(if (memq window-system '(mac))
+    (set-default-font "Monaco 13")
+  (set-default-font "Inconsolata 12")
+    )
 (setq display-time-day-and-date t
       display-time-24hr-format t)
 (display-time)
