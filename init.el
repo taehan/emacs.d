@@ -3,6 +3,16 @@
 (toggle-scroll-bar -1)              ;disable scrollbar
 (menu-bar-mode -1)                  ;disable menubar
 (tool-bar-mode -1)                  ;disable toolbar
+
+;; backup strategy
+(setq
+ backup-by-copying t
+ backup-directory-alist '(("." . "~/.emacs.d/saves"))
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)
+
 (global-auto-revert-mode 1)	    ;auto reload when file changes
 
 ;; Interactively DO things
