@@ -70,12 +70,14 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
-;; looking
+;; theme
 (load-theme 'zenburn t)
 (if (memq window-system '(mac))
     (set-default-font "Monaco 13")
   (set-default-font "Inconsolata 12")
-    )
+  )
+
+;; time
 (setq display-time-day-and-date t
       display-time-24hr-format t)
 (display-time)
