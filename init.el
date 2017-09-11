@@ -72,10 +72,18 @@
 
 ;; theme
 (load-theme 'zenburn t)
-(if (memq window-system '(mac))
+;; (if (memq window-system '(mac))
+;;     (set-default-font "Monaco 13")
+;;   (set-default-font "Inconsolata 12")
+;;   )
+
+;; font
+(when (eq system-type 'darwin)
     (set-default-font "Monaco 13")
+)  
+(when (eq system-type 'windows-nt)
   (set-default-font "Inconsolata 12")
-  )
+)  
 
 ;; time
 (setq display-time-day-and-date t
