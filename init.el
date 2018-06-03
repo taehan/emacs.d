@@ -66,9 +66,24 @@
 	    (setq tab-width 4)
             ))
 
+;; for mit-scheme
+(require 'xscheme)
+
 ;; web-mode for html
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+;; haskell
+;; (add-hook ’haskell-mode-hook ’interactive-haskell-mode)
+(eval-after-load 'haskell-mode
+  '(define-key haskell-mode-map [f8] 'haskell-navigate-imports))
+; add haskell tools to path
+(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
+  (setenv "PATH" (concat my-cabal-path path-separator (getenv "PATH")))
+  (add-to-list 'exec-path my-cabal-path))
+; hasktags
+(custom-set-variables '(haskell-tags-on-save t))
+
 
 ;; theme
 (load-theme 'zenburn t)
@@ -98,7 +113,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-mode magit go-eldoc exec-path-from-shell flymake-go go-autocomplete auto-complete zenburn-theme go-mode))))
+    (haskell-mode web-mode magit go-eldoc exec-path-from-shell flymake-go go-autocomplete auto-complete zenburn-theme go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
